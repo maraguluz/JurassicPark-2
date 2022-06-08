@@ -10,6 +10,53 @@ namespace JurassicPark
         {
             Console.WriteLine("Welcome to the coolest group!");
             var dinos = new List<Dinosaur>();
+            var programIsAlive = true;
+
+            while (programIsAlive)
+            {
+                Console.WriteLine("What do you want to do? These are your options:");
+                Console.WriteLine("(V)iew\n (R)emove\n (A)dd\n (T)ransfer\n (S)ummary");
+                Console.Write("(Q)uit");
+                var choice = Console.ReadLine().ToUpper();
+
+                switch (choice)
+                {
+                    case "A":
+                        var dino = new Dinosaur();
+
+
+
+                }
+
+
+                //View
+                //  -in name or enclosure number order
+                //  -if no dinos print out special message
+
+                //Add
+                //  -Name, diet type, weight, enclosure number 
+                //    - when acquired supplied by 
+
+
+                //Remove
+                //   - find and delete dino typed in by user 
+                //Transfer 
+                //  - Prompt user for dinos name 
+                //  - Prompt for new enclosure number 
+                //  -update the new info for the old
+                //Summary 
+                //  - display number of carnivores and herbivores  
+                // Quit 
+                //  -stop program 
+
+
+
+
+            }
+
+
+
+
 
 
             //Create a class to represent your dinosaurs. The class should have the following properties
