@@ -15,14 +15,32 @@ namespace JurassicPark
             while (programIsAlive)
             {
                 Console.WriteLine("What do you want to do? These are your options:");
-                Console.WriteLine("(V)iew\n (R)emove\n (A)dd\n (T)ransfer\n (S)ummary");
-                Console.Write("(Q)uit");
+                Console.WriteLine("(V)iew\n(R)emove\n(A)dd\n(T)ransfer\n(S)ummary");
+                Console.Write("(Q)uit\n");
                 var choice = Console.ReadLine().ToUpper();
 
                 switch (choice)
                 {
                     case "A":
                         var dino = new Dinosaur();
+                        //public string Name { get; set; }
+                        //public string DietType { get; set; }
+                        //public DateTime WhenAcquired { get; set; }
+                        //public int Weight { get; set; }
+                        //public int EnclosureNumber { get; set; }
+                        Console.WriteLine("Please enter your dino's name");
+                        dino.Name = Console.ReadLine();
+                        Console.WriteLine("Please enter your dino's diet: (C)arnivore or (H)erbivore.");
+                        dino.DietType = Console.ReadLine();
+                        Console.WriteLine("Please enter your dino's weight.");
+                        dino.Weight = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("Please enter your dino's enclosure number.");
+                        dino.EnclosureNumber = Int32.Parse(Console.ReadLine());
+                        dino.WhenAcquired = DateTime.Now;
+                        break;
+                    default:
+                        Console.WriteLine($"Sorry that is not an acceptable response please try again.");
+                        break;
 
 
 
@@ -35,7 +53,7 @@ namespace JurassicPark
 
                 //Add
                 //  -Name, diet type, weight, enclosure number 
-                //    - when acquired supplied by 
+                //    - when acquired supplied by code 
 
 
                 //Remove
