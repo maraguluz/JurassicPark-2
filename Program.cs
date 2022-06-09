@@ -37,6 +37,13 @@ namespace JurassicPark
                         Console.WriteLine("Please enter your dino's enclosure number.");
                         dino.EnclosureNumber = Int32.Parse(Console.ReadLine());
                         dino.WhenAcquired = DateTime.Now;
+                        dinos.Add(dino);
+                        break;
+                    case "S":
+                        var carnivores = dinos.Count(dinos => dinos.DietType == "C");
+                        Console.WriteLine($"The park contains {carnivores} carnivores.");
+                        var herbivores = dinos.Count(dinos => dinos.DietType == "H");
+                        Console.WriteLine($"The park contains {herbivores} herbivores.");
                         break;
                     default:
                         Console.WriteLine($"Sorry that is not an acceptable response please try again.");
