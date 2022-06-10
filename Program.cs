@@ -45,6 +45,36 @@ namespace JurassicPark
                         var herbivores = dinos.Count(dinos => dinos.DietType == "H");
                         Console.WriteLine($"The park contains {herbivores} herbivores.");
                         break;
+                    case "R":
+                        Console.WriteLine("What dino would you like to delete?");
+                        var deletedDino = Console.ReadLine();
+                        var landonEatsBananas = dinos.Find(dinos => dinos.Name == deletedDino);
+                        dinos.Remove(landonEatsBananas);
+                        break;
+                    case "T":
+                        Console.WriteLine("What dino would you like to update?");
+                        var updatedDino = Console.ReadLine();
+                        var landonEats = dinos.Find(dinos => dinos.Name == updatedDino);
+                        Console.WriteLine("What is the new enclosure number?");
+                        var newEnclosure = Int32.Parse(Console.ReadLine());
+                        landonEats.EnclosureNumber = newEnclosure;
+                        break;
+                    case "V":
+                        //  -in name or enclosure number order
+                        //  -if no dinos print out special message
+                        Console.WriteLine("Do you want to see the dinos by (E)nclosure number or (N)ame?");
+                        var decision = Console.ReadLine();
+                        var enclosureNumberOrderDino = dinos.OrderByDescending(dinosaur => dinosaur.EnclosureNumber).ToList();
+                        var nameOrderDino = dinos.OrderByDescending(dinosaur => dinosaur.Name).ToList();
+                        foreach (var dinoz in nameOrderDino)
+                        {
+                            Console.WriteLine(dinoz);
+                        }
+                        break;
+
+
+
+
                     default:
                         Console.WriteLine($"Sorry that is not an acceptable response please try again.");
                         break;
